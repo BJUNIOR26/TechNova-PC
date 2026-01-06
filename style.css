@@ -1,0 +1,352 @@
+/* Custom styles for TechNova PC */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0f172a;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    padding-top: 64px; /* Altura del navbar para evitar solapamiento */
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #22d3ee, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(34, 211, 238, 0.3);
+}
+
+.btn-hover {
+    transition: background-color 0.3s ease;
+}
+
+.btn-hover:hover {
+    background-color: #22d3ee;
+}
+
+/* Glassmorphism effect for product cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive image optimization */
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Retina display support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .product-image {
+        /* In a real scenario, you would swap the image source here using srcset or similar techniques */
+        /* For this CSS, we ensure high quality rendering */
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Form validation styles */
+.form-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #22d3ee;
+    box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.2);
+}
+
+.form-input:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+}
+
+/* Fix for Select Options visibility */
+select.form-input option {
+    background-color: #1e293b;
+    color: white;
+    padding: 10px;
+}
+
+/* Newsletter subscription */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .newsletter-form {
+        flex-direction: row;
+    }
+}
+
+.newsletter-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: #22d3ee;
+}
+
+.newsletter-btn {
+    background: #22d3ee;
+    color: #0f172a;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background: #0891b2;
+}
+
+/* Footer Styles */
+.footer-link {
+    color: #9ca3af;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #22d3ee;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #9ca3af;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #22d3ee;
+}
+
+/* Payment Icons */
+.payment-icon {
+    font-size: 2rem;
+    color: #cbd5e1;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.payment-icon:hover {
+    filter: grayscale(0%);
+}
+
+.fa-cc-visa:hover {
+    color: #1a1f71 !important; /* Visa Blue */
+}
+
+.fa-cc-mastercard:hover {
+    color: #eb001b !important; /* Mastercard Red */
+}
+
+.payment-method-custom {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px;
+    letter-spacing: 0.5px;
+}
+
+/* Team Member Photo */
+.team-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #22d3ee;
+    margin-bottom: 1rem;
+}
+
+/* --- Animations --- */
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Blob Background Animation */
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+/* Infinite Scroll (Marquee) */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+    animation: scroll 20s linear infinite;
+    width: max-content; /* Ensure container fits all items */
+}
+
+/* Scroll Reveal (Fade In Up) */
+.section-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.section-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Light Mode Support */
+body.light-mode {
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+body.light-mode .bg-slate-800,
+body.light-mode .bg-slate-900 {
+    background-color: #ffffff;
+}
+
+body.light-mode .bg-slate-700 {
+    background-color: #f1f5f9;
+}
+
+body.light-mode .text-white {
+    color: #1e293b;
+}
+
+body.light-mode .text-gray-300,
+body.light-mode .text-gray-400 {
+    color: #475569;
+}
+
+body.light-mode .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+body.light-mode .border-slate-700,
+body.light-mode .border-slate-800 {
+    border-color: #e2e8f0;
+}
+
+/* Sale Badges */
+.badge-sale {
+    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+.badge-hot {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+.badge-new {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+/* Cart Shake Animation */
+@keyframes cart-jump {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.4) rotate(-15deg); }
+    50% { transform: scale(1.4) rotate(15deg); }
+    70% { transform: scale(1.4) rotate(-15deg); }
+    100% { transform: scale(1); }
+}
+
+.cart-animate {
+    animation: cart-jump 0.5s ease-in-out;
+}
+
+/* Flex alignment for product cards to keep buttons at the bottom */
+.glass-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.glass-card .p-6, .glass-card .p-5 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.glass-card button.w-full, .glass-card .add-to-cart-btn {
+    margin-top: auto;
+}
+
+/* Skeleton Loader */
+.skeleton {
+    background: #1e293b;
+    background: linear-gradient(110deg, #1e293b 8%, #334155 18%, #1e293b 33%);
+    border-radius: 12px;
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
+}
+
+.skeleton-image { height: 200px; width: 100%; }
+.skeleton-title { height: 24px; width: 80%; margin: 20px 0 10px 20px; }
+.skeleton-text { height: 16px; width: 60%; margin: 0 0 20px 20px; }
+.skeleton-footer { height: 32px; width: 90%; margin: 10px auto 20px; }
