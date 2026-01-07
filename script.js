@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modal-image').src = p.image;
         document.getElementById('modal-category').textContent = p.category;
         document.getElementById('modal-title').textContent = p.title;
-        document.getElementById('modal-price').textContent = `$${p.price.toLocaleString()}`;
+        document.getElementById('modal-price').textContent = `S/ ${p.price.toLocaleString()}`;
         document.getElementById('modal-description').textContent = p.description;
         const specs = document.getElementById('modal-specs');
         specs.innerHTML = p.specs.map(s => `<li><i class="fas fa-check text-cyan-400 mr-2 text-xs"></i>${s}</li>`).join('');
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="flex items-center justify-between bg-slate-700 p-4 rounded-lg">
                     <div class="flex items-center space-x-4">
                         <img src="${i.image}" class="w-16 h-16 object-cover rounded">
-                        <div><h4 class="font-semibold text-sm text-white">${i.name}</h4><p class="text-cyan-400 font-bold">$${i.price}</p></div>
+                        <div><h4 class="font-semibold text-sm text-white">${i.name}</h4><p class="text-cyan-400 font-bold">S/ ${i.price}</p></div>
                     </div>
                     <div class="flex flex-col items-end space-y-2">
                         <button onclick="window.removeFromCart('${i.id}')" class="text-gray-400 hover:text-red-400"><i class="fas fa-trash-alt"></i></button>
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>`).join('') : '<p class="text-center text-gray-400 mt-10">Tu carrito está vacío</p>';
         }
-        if (c.cartTotalElement) c.cartTotalElement.textContent = `$${cart.reduce((s, i) => s + (i.price * i.quantity), 0).toLocaleString()}`;
+        if (c.cartTotalElement) c.cartTotalElement.textContent = `S/ ${cart.reduce((s, i) => s + (i.price * i.quantity), 0).toLocaleString()}`;
     }
 
     function createProductCard(p) {
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3 class="text-lg font-semibold mb-2">${p.title}</h3>
                 <p class="text-gray-400 text-sm mb-3">${p.description.substring(0, 60)}...</p>
                 <div class="flex justify-between items-center mt-auto">
-                    <span class="text-xl font-bold text-cyan-400">$${p.price.toLocaleString()}</span>
+                    <span class="text-xl font-bold text-cyan-400">S/ ${p.price.toLocaleString()}</span>
                     <button onclick="window.addToCart({id: '${p.title.toLowerCase().replace(/ /g, '-')}', name: '${p.title.replace(/'/g, "'")}', price: ${p.price}, image: '${p.image}'})" class="add-to-cart-btn bg-slate-700 hover:bg-cyan-400 hover:text-slate-900 text-white p-2 rounded-full transition-all">
                         <i class="fas fa-shopping-cart"></i>
                     </button>
