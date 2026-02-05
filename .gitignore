@@ -1,0 +1,8 @@
+﻿node_modules/
+.gradle/
+build/
+bin/
+obj/
+.vs/
+*.exe
+*.apk
